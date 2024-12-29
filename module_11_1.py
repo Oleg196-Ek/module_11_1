@@ -8,15 +8,17 @@ import os, sys
 #s = req.text
 #print(s)
 
-
 im = Image.open('img.png')
+im.save('cat.jpg')# Преобразуем изображение из одного формата в другой.
+im = Image.open('cat.jpg')
+im.thumbnail((400,200))# изменяем размеры рисунка
+im.save('cat_thumbnail.jpg')
+im = Image.open('cat.jpg')
+im.transpose(Image.FLIP_TOP_BOTTOM)
+im.save('cat_flip.jpg')
+
 print(im.format, im.size, im.mode)#использую атрибуты экземпляра для просмотра содержимого файла
 im.show()# показ рисунка
-
-
-imag = Image.open('66263.jpg')
-print(imag.format, imag.size, imag.mode)
-imag.show()
 
 
 
